@@ -4,10 +4,30 @@ nav {
   align-items: center;
   height: fit-content;
   padding: 10px;
-  border: solid black 1px;
 }
 
 button {
-  min-width: 90px;
+  width: 90px;
   padding: 8px;
+  color: #38bdf8;
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #38bff870;
+  color: white;
+  border-radius: 5px;
+}
+
+button:focus {
+  background: #38bdf8;
+  color: white;
+  border-radius: 5px;
+}
+
+.add-post button {
+  margin-left: 10px;
 }
