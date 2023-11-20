@@ -1,0 +1,10 @@
+<nav>
+  <button routerLink="/">Home</button>
+  <button routerLink="/about me">About</button>
+  <button *ngIf="changePerspectiv" routerLink="new post" ngClass="add-button">
+    Add post
+  </button>
+  <button (click)="onChange()">
+    {{ changePerspectiv ? "logged in as: Admin" : "Guest" }}
+  </button>
+</nav>
