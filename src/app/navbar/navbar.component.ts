@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  changePerspectiv: boolean = true;
+  changePerspectiv: boolean = false;
 
   onChange() {
     this.changePerspectiv = !this.changePerspectiv;

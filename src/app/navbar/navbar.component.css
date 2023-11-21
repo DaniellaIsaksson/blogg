@@ -1,9 +1,10 @@
 nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: fit-content;
   padding: 10px;
+  gap: 60px;
 }
 
 button {
@@ -29,5 +30,5 @@ button:focus {
 }
 
 .add-post button {
-  margin-left: 10px;
+  margin-left: 5px;
 }

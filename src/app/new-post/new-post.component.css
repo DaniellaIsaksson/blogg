@@ -33,6 +33,12 @@ textarea {
   min-height: 150px;
 }
 
+form input:focus,
+form textarea:focus {
+  border-color: #38bdf8;
+  outline: 1px solid #97d7f5;
+}
+
 button {
   background: #38bdf8;
   color: white;

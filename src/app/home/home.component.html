@@ -1,1 +1,15 @@
-<p>home works!</p>
+<section *ngFor="let post of allPosts">
+  <article [routerLink]="['/postdetails/:id']">
+    <h1>{{ post.title }}</h1>
+    <img [src]="post.thumbnailUrl" />
+  </article>
+</section>
+<section *ngIf="allPosts.length == 0">
+  <article>
+    <h1>Welcome!</h1>
+    <p>
+      To create a new posts you need to change perspective. Click the buttom
+      Guest in the navigationbar to switch.
+    </p>
+  </article>
+</section>
