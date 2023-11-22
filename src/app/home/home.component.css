@@ -11,13 +11,14 @@ article {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 40%;
+  width: 55%;
   padding: 30px;
-  background: #fafafa;
-  border-radius: 10px;
 }
 
 img {
   max-width: 70%;
   height: auto;
+}
+h1 {
+  color: #38bdf8;
 }

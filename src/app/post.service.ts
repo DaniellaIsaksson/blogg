@@ -5,19 +5,21 @@ import { Post } from './post';
   providedIn: 'root',
 })
 export class PostService {
-  private localPosts = 'posts';
+  private localPosts: Post[] = [];
 
-  constructor() {}
+  constructor() {
+    this.localPosts = this.getPosts();
+  }
 
   // Metod för att hämta posts från localStorage
   private getPosts(): Post[] {
-    const storedPosts = localStorage.getItem(this.localPosts);
+    const storedPosts = localStorage.getItem('posts');
     return !storedPosts ? [] : JSON.parse(storedPosts);
   }
 
   // Metod för att spara posts till localStorage
   private savePost(posts: Post[]): void {
-    localStorage.setItem(this.localPosts, JSON.stringify(posts));
+    localStorage.setItem('posts', JSON.stringify(posts));
   }
 
   // Metod för att hämta alla posts
@@ -35,7 +37,10 @@ export class PostService {
     dislikes: number,
     comments: string[]
   ): void {
+    const posts = this.getPosts();
+
     const newPost: Post = {
+      id: posts.length + 1,
       title,
       thumbnailUrl,
       body,
@@ -44,13 +49,12 @@ export class PostService {
       dislikes: 0,
       comments: [],
     };
-    /*
-     * Hämtar existerande posts
-     * Lägger till nya posts till arrayen posts
-     * Sparar och uppdaterar posts till localStorage
-     */
-    const posts = this.getPosts();
+
     posts.push(newPost);
     this.savePost(posts);
+  }
+
+  getPostById(id: number): Post | undefined {
+    return this.localPosts.find((post) => post.id === id);
   }
 }
