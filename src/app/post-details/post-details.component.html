@@ -9,6 +9,16 @@
     <h1>{{ post.title }}</h1>
     <img [src]="post.thumbnailUrl" />
     <p>{{ post.body }}</p>
+    <div ngClass="div-ld">
+      <div ngClass="likes" (click)="likes()">
+        <img [src]="likeImg" alt="like" img />
+        <p>{{ post.likes }}</p>
+      </div>
+      <div ngClass="dislike" (click)="dislikes()">
+        <img [src]="dislikeImg" alt="dislike" />
+        <p>{{ post.dislikes }}</p>
+      </div>
+    </div>
     <p ngClass="date">
       Published: {{ post.creationDate | date : "dd/MM/yy - kl.HH:mm" }}
     </p>

@@ -12,13 +12,13 @@ export class PostService {
   }
 
   // Metod för att hämta posts från localStorage
-  private getPosts(): Post[] {
+  public getPosts(): Post[] {
     const storedPosts = localStorage.getItem('posts');
     return !storedPosts ? [] : JSON.parse(storedPosts);
   }
 
   // Metod för att spara posts till localStorage
-  private savePost(posts: Post[]): void {
+  public savePost(posts: Post[]): void {
     localStorage.setItem('posts', JSON.stringify(posts));
   }
 
@@ -45,8 +45,8 @@ export class PostService {
       thumbnailUrl,
       body,
       creationDate,
-      likes: 0,
-      dislikes: 0,
+      likes,
+      dislikes,
       comments: [],
     };
 
@@ -55,6 +55,7 @@ export class PostService {
   }
 
   getPostById(id: number): Post | undefined {
-    return this.localPosts.find((post) => post.id === id);
+    const posts = this.getPosts();
+    return posts.find((post) => post.id === id);
   }
 }

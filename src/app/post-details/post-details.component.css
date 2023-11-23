@@ -35,3 +35,20 @@ p {
 .date {
   font-size: 10px;
 }
+
+.div-ld {
+  display: flex;
+  gap: 30px;
+}
+
+.likes,
+.dislike {
+  display: flex;
+  gap: 3px;
+  width: 30px;
+}
+
+.likes p,
+.dislike p {
+  font-size: 12px;
+}
