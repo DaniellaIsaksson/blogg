@@ -1,1 +1,12 @@
-<p>comment works!</p>
+<section>
+  <textarea #body placeholder="Write your comment.."></textarea>
+  <button (click)="addComment(body.value)">Add</button>
+
+  <div *ngFor="let comment of comments" ngClass="comment-bubble">
+    <p>{{ comment.body }}</p>
+    <div ngClass="comment-div">
+      <span>{{ comment.creationDate | date : "dd/MM/yy - kl.HH:mm" }}</span>
+      <span>Anonymous</span>
+    </div>
+  </div>
+</section>

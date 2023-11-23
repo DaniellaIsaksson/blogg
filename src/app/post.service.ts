@@ -35,7 +35,7 @@ export class PostService {
     creationDate: Date,
     likes: number,
     dislikes: number,
-    comments: string[]
+    comments: Comment[]
   ): void {
     const posts = this.getPosts();
 

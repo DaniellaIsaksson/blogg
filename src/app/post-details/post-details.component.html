@@ -9,9 +9,9 @@
     <h1>{{ post.title }}</h1>
     <img [src]="post.thumbnailUrl" />
     <p>{{ post.body }}</p>
-    <div></div>
     <p ngClass="date">
       Published: {{ post.creationDate | date : "dd/MM/yy - kl.HH:mm" }}
     </p>
   </article>
 </section>
+<app-comment [postId]="postId"></app-comment>
