@@ -1,3 +1,4 @@
+<!-- Loopar genom alla posts och skapar en länk till post-details för varje post-->
 <section *ngFor="let post of allPosts">
   <article [routerLink]="['/postdetails', post.id]">
     <h1>{{ post.title }}</h1>
@@ -5,6 +6,7 @@
   </article>
 </section>
 <section>
+  <!-- ifall inga posts finns visas ett välkomstmeddelande-->
   <article *ngIf="allPosts.length === 0">
     <h1>Welcome!</h1>
     <p>

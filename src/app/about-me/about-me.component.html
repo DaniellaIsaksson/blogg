@@ -1,1 +1,29 @@
-<p>about-me works!</p>
+<section>
+  <article>
+    <h3>About me</h3>
+    <img src="assets/about.jpg" />
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+    <form
+      (ngSubmit)="onSend(name.value, email.value, message.value)"
+      *ngIf="!sendBool"
+    >
+      <h3>Contact me</h3>
+      <label>Name</label>
+      <input placeholder="Type in name.." #name />
+      <label>Email</label>
+      <input placeholder="Type in email" #email />
+      <label>Message</label>
+      <textarea placeholder="Type in message.." #message></textarea>
+      <button>Send</button>
+    </form>
+  </article>
+  <!-- Article visas när meddelande har skickats -->
+  <article *ngIf="sendBool" ngClass="send-message">
+    <p ngClass="p-thanks">Thanks for your message!</p>
+  </article>
+</section>

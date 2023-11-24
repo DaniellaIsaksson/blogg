@@ -10,6 +10,7 @@ import { Post } from '../post';
 export class HomeComponent {
   constructor(private postService: PostService) {}
 
+  // Getter funktion för att hämta och reverse för att ändra ordning på posten "senaste inlägget högst upp"
   get allPosts(): Post[] {
     return this.postService.allPosts().reverse();
   }

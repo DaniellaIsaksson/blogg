@@ -1,11 +1,13 @@
 <section *ngIf="post">
   <article>
+    <!-- Back knapp för att navigera till home page-->
     <img
       src="assets/go-back-arrow.png"
       alt="Back"
       ngClass="back"
       routerLink="/"
     />
+    <!-- Visar titel, bild, likes, dislikes, creationDate etc -->
     <h1>{{ post.title }}</h1>
     <img [src]="post.thumbnailUrl" />
     <p>{{ post.body }}</p>
@@ -24,4 +26,5 @@
     </p>
   </article>
 </section>
+<!-- comments-component med PostId som inmatning -->
 <app-comment [postId]="postId"></app-comment>

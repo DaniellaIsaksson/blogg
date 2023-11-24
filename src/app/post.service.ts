@@ -5,8 +5,10 @@ import { Post } from './post';
   providedIn: 'root',
 })
 export class PostService {
+  // array för att lagra posts
   private localPosts: Post[] = [];
 
+  // Hämtar posts från localStorage
   constructor() {
     this.localPosts = this.getPosts();
   }
@@ -37,8 +39,9 @@ export class PostService {
     dislikes: number,
     comments: Comment[]
   ): void {
+    // Hämtar befintliga posts från localStorage
     const posts = this.getPosts();
-
+    // Skapa ny post med denna information
     const newPost: Post = {
       id: posts.length + 1,
       title,
@@ -50,10 +53,12 @@ export class PostService {
       comments: [],
     };
 
+    /*lägger till ny post i listan med befintliga posts
+     och sparar den uppdaterade listan med posts till localStorage.*/
     posts.push(newPost);
     this.savePost(posts);
   }
-
+  // Metod för att hämta posts med specifikt ID och returnerar genom att matcha det angivna ID:et
   getPostById(id: number): Post | undefined {
     const posts = this.getPosts();
     return posts.find((post) => post.id === id);

@@ -19,13 +19,14 @@ export class PostDetailsComponent implements OnInit {
     private postService: PostService
   ) {}
 
+  // Subscribe på ändringar i URl-parametrarna för att uppdatera sidan när ID ändras
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.postId = +params['id'];
       this.post = this.postService.getPostById(this.postId);
     });
   }
-
+  // Ökar antalet likes och uppdaterar bilden,uppdaterar posten i localStorage.
   likes(): void {
     if (this.post) {
       this.post.likes++;
@@ -34,7 +35,7 @@ export class PostDetailsComponent implements OnInit {
       this.updatePost();
     }
   }
-
+  // Ökar antalet dislikes och uppdaterar bilden,uppdaterar posten i localStorage.
   dislikes(): void {
     if (this.post) {
       this.post.dislikes++;

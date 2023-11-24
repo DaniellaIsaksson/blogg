@@ -1,6 +1,7 @@
 <nav>
   <button routerLink="/">Home</button>
   <button routerLink="/about me">About</button>
+  <!-- Knapp för att lägga till posts och vistas endast om changePerspective är true -->
   <div ngClass="add-post">
     <button *ngIf="changePerspectiv" routerLink="new post">Add post</button>
     <button (click)="onChange()">

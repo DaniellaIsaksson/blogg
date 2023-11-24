@@ -1,7 +1,8 @@
 <section>
   <textarea #body placeholder="Write your comment.."></textarea>
+  <!-- Knapp för att lägga till ny comment-->
   <button (click)="addComment(body.value)">Add</button>
-
+  <!-- Loopar genom och visar alla comments för den befintliga posten -->
   <div *ngFor="let comment of comments" ngClass="comment-bubble">
     <p>{{ comment.body }}</p>
     <div ngClass="comment-div">
